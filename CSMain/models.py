@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 # Create your models here.
 
 class Publisher(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
     Logo = models.ImageField(null=True, blank = True)
@@ -12,6 +14,7 @@ class Publisher(models.Model):
         return self.Name
 
 class Genre(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
 
@@ -20,6 +23,7 @@ class Genre(models.Model):
 
 
 class Tag(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
 
@@ -27,6 +31,7 @@ class Tag(models.Model):
         return self.Name
 
 class Language(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     Name = models.CharField(max_length=20)
     url = models.SlugField(unique=True)
 
@@ -34,6 +39,7 @@ class Language(models.Model):
         return self.Name
 
 class Series(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
     Carousel = models.ImageField(null = True, blank = True)
@@ -56,6 +62,7 @@ class Series(models.Model):
         return self.Name
 
 class Season(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     SeasonNumber = models.PositiveSmallIntegerField()
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
@@ -80,6 +87,7 @@ class Season(models.Model):
 
 
 class Episode(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, name='id')
     EpisodeNumber = models.PositiveSmallIntegerField()
     Name = models.CharField(max_length=255)
     url = models.SlugField(unique=True)
