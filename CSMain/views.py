@@ -7,7 +7,7 @@ from rest_framework import generics
 # Create your views here.
 
 class LangauageList(generics.ListAPIView):
-    queryset = Language.objects.all()
+    queryset = Language.objects.all().order_by('Name')
     serializer_class = LangauageSerializer
 
 class LanguageDetails(generics.RetrieveAPIView):
@@ -15,7 +15,7 @@ class LanguageDetails(generics.RetrieveAPIView):
     serializer_class = LangauageSerializer
 
 class GenreList(generics.ListAPIView):
-    queryset = Genre.objects.all()
+    queryset = Genre.objects.all().order_by('Name')
     serializer_class = GenreSerializer
 
 class GenreDetails(generics.RetrieveAPIView):
@@ -23,7 +23,7 @@ class GenreDetails(generics.RetrieveAPIView):
     serializer_class = GenreSerializer
 
 class TagList(generics.ListAPIView):
-    queryset = Tag.objects.all()
+    queryset = Tag.objects.all().order_by('Name')
     serializer_class = TagSerializer
 
 class TagDetails(generics.RetrieveAPIView):
@@ -31,7 +31,7 @@ class TagDetails(generics.RetrieveAPIView):
     serializer_class = TagSerializer
 
 class PublisherList(generics.ListAPIView):
-    queryset = Publisher.objects.all()
+    queryset = Publisher.objects.all().order_by('Name')
     serializer_class = PublisherSerializer
 
 class PublisherDetails(generics.RetrieveAPIView):
@@ -39,7 +39,7 @@ class PublisherDetails(generics.RetrieveAPIView):
     serializer_class = PublisherSerializer
 
 class SeriesList(generics.ListAPIView):
-    queryset = Series.objects.all()
+    queryset = Series.objects.all().order_by('-CreatedOn')
     serializer_class = SeriesSerializer
 
 class seriesDetails(generics.RetrieveAPIView):

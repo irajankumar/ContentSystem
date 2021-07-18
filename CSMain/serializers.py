@@ -29,7 +29,7 @@ class TagSerializer(serializers.ModelSerializer):
 class SeriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
-        fields = ['id', 'Name', 'url', 'AgeRating', 'Genres', 'Languages', 'ProducedBy']
+        fields = ['id', 'Name', 'url', 'AgeRating', 'Genres', 'Languages', 'CreatedOn', 'ProducedBy']
 
 
 class SeasonSerializer(serializers.ModelSerializer):
