@@ -14,6 +14,11 @@ class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
         fields = ['id', 'Name', 'url']
+
+class LangauageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Language
+        fields = ['id', 'Name', 'url']
     
 
 class TagSerializer(serializers.ModelSerializer):
@@ -24,7 +29,7 @@ class TagSerializer(serializers.ModelSerializer):
 class SeriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
-        fields = ['id', 'Name', 'url', 'AgeRating']
+        fields = ['id', 'Name', 'url', 'AgeRating', 'Genres', 'Languages', 'ProducedBy']
 
 
 class SeasonSerializer(serializers.ModelSerializer):
